@@ -13,8 +13,9 @@ const store = new Vuex.Store({
    mutations: {
        addCart: (state, el) => state.cart.push({"id":el}),
        deleteCart: (state, el) => {
-           
-           for(let i = 0; i < state.cart.length; i++) if(state.cart[i].id==el) {state.cart.splice(i,1);return 1;} 
+           for(let i = 0; i < state.cart.length; i++) 
+            if(state.cart[i].id==el) 
+              {state.cart.splice(i,1);return 1;} 
        }
      },
    getters: {

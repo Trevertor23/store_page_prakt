@@ -25,7 +25,9 @@
 </template>
 <script>
     import products from '../data/products.js'
-
+    import axios from 'axios'
+    import VueAxios from 'vue-axios'
+    
     export default {
         data: function () {
             return {
@@ -35,7 +37,12 @@
             };
         },
         mounted: function(){
-            this.items = products;
+            //this.items = products;
+            axios.get("http://localhost:3000/items/").then((response)=>{
+                    console.log(response.data);
+                    this.items = response.data;
+                })
+
         },
         methods: {
             AddToCart: function(id) {

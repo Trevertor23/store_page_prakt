@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Vuex from 'vuex'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
 import App from './components/App.vue'
 import ProductInfo from './components/ProductInfo.vue'
@@ -18,6 +20,7 @@ const router = new VueRouter({
     routes
 })
 
+Vue.use(VueAxios, axios)
 Vue.use(VueRouter)
 
 new Vue({
